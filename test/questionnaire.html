@@ -1,52 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./../css/style-navbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/css/variables.css" rel="stylesheet" />
     <title>مرض الفيروس التاجي - اختبر أعراض الفيروس التاجي 19</title>
-    <style>
-        .style_card {
-            background-color: var(--color_inforation);
-
-        }
-
-        p {
-            font-size: 17px;
-            font-weight: 500;
-            line-height: 30px;
-            text-align: justify;
-            text-align-last: center;
-        }
-
-        h5 {
-            font-family: var(--font-family);
-            color: var(--color_bleu2);
-            font-size: 22px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            text-align: center;
-
-        }
-
-        .button {
-            color: var(--color_bleu2);
-            border: 2px solid var(--color_bleu2);
-            width: 200px;
-            background-color: var(--color_bgButton);
-            font-weight: 700;
-
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/question1.css">
+    <link rel="stylesheet" href="./../css/style-navbar.css">
 </head>
 
 <body>
-
     <header class="px-5">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -74,20 +44,20 @@
             </div>
         </nav>
     </header>
+
     <main class="mt-5">
-        
         <div class="board-stepper fw-bold text-center d-flex justify-content-around align-items-center">
+            <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                    <ellipse id="Ellipse_270" data-name="Ellipse 270" cx="5.5" cy="5" rx="5.5" ry="5" fill="#1078ad" />
+                </svg>
+                <div class="information">Informations</div>
+            </div>
             <div class="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
                     <circle id="Ellipse_271" data-name="Ellipse 271" cx="19.5" cy="19.5" r="19.5" fill="#88b7d3" />
                     <circle id="Ellipse_275" data-name="Ellipse 275" cx="5" cy="5" r="5" transform="translate(15 14)"
                         fill="#f4cf1b" />
-                </svg>
-                <div class="information">Informations</div>
-            </div>
-            <div class="">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
-                    <ellipse id="Ellipse_270" data-name="Ellipse 270" cx="5.5" cy="5" rx="5.5" ry="5" fill="#1078ad" />
                 </svg>
                 <div class="information">Questionnaire</div>
             </div>
@@ -98,34 +68,38 @@
                 <div class="information">Résultats</div>
             </div>
         </div>
-        <section class="d-flex justify-content-center align-items-center w-100 p-5  ">
-            <div class="card   px-5 py-5  mb-1 border-1 style_card ">
-                <h5> Préambule </h5>
-                <p>L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour
-                    contribuer
-                    à
-                    fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de
-                    Coronavirus COVID-19.
-                    L’exhaustivité, l’exactitude, le caractère à jour des informations et contenus mis à disposition
-                    dans
-                    cette application,
-                    ou leur adéquation à des finalités particulières, ne sont pas garantis.</p>
-                <hr>
-                <p>Cette application ne substitue pas votre médecin qui est plus apte à vous donner plus de
-                    précision.<br>
-                    Les informations de cette application est le premier niveau de la détection des cas possibles du
-                    COVID-19.</p>
 
+        <div class="w-75 my-3 m-auto">
+            <div class="fw-bold">1/22</div>
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 5.54%" aria-valuenow="50"
+                    aria-valuemin="0" aria-valuemax="100">
+                </div>
             </div>
-
-            </div>
-
-        </section>
-        <div class=" text-center ">
-            <button type="button" onclick="window.location.href='questionnaire.html'"
-                class=" btn btn-lg  button m-2 ">Démarrer le test</button>
-
         </div>
+        <form>
+            <div class="titre">Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?
+            </div>
+            <div class="flex center">
+                <div>
+                    <div class="choix">réponse 1</div>
+                    <input class="form-check-input" type="radio" name="reponse" id="">
+                </div>
+                <div>
+                    <div class="choix choisi">réponse 1</div>
+                    <input class="form-check-input" type="radio" name="reponse" id="">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="Recipient's username"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2">@example.com</span>
+                </div>
+            </div>
+            <div class="flex betwen">
+                <button>Précedent</button>
+                <button type="submit">Suivant</button>
+            </div>
+        </form>
     </main>
     <footer class="text-center text-lg-start mt-5">
         <hr class="mb-4 mt-0 d-inline-block mx-auto w-100" style="background-color: #000; height: 1px" />
