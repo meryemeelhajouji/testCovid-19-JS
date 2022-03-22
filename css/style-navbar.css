@@ -1,0 +1,16 @@
+header {
+  background-image: url(./../Design/Assets/SVG/Merged\ bar-1.svg);
+}
+.arabe-link img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.board-stepper .d-round-info{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: red 19px solid;
+  background: rgb(8, 24, 255);
+}
