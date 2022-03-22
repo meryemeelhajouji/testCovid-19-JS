@@ -1,0 +1,61 @@
+@import url("variables.css");
+body{
+    font-family: var(--font-family);
+}
+form{
+    width: 80%;
+    height: 400px;
+    padding: 50px;
+    margin: auto;
+    border: 1px solid rgb(191, 191, 191);
+    display: flex;
+    color: var(--color_g);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.titre{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.flex{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    text-align: center;
+}
+.center{
+    justify-content: center;
+}
+.betwen{
+    justify-content: space-between;
+}
+.center div{
+    padding: 10px;
+}
+button{
+    width: 120px;
+    font-family: var(--font-family);
+    font-size: large;
+    background-color: #D0E5F0;
+    color: var(--color_bleu2);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--color_bleu2);
+}
+button:hover{
+    background-color: var(--color_bleu2);
+    cursor: pointer;
+    color: white;
+}
+.choix{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--color_bleu2);
+    color: var(--color_bleu2);
+}
+.choisi{
+    color: yellow;
+    background-color: var(--color_bleu2);
+}
