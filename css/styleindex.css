@@ -1,4 +1,31 @@
-.titre{
-    color: #1078AD;
-    
+@import url('variables.css');
+*{
+    font-family: var(--font-family);
 }
+
+.titre{
+    color: var(--color_bleu2);
+    font-family: var(--font-family);
+}
+.ques{
+    color: var(--color_bleu2);
+}
+.ques2{
+    color: var(--color_g);
+}
+.but{
+    color: var(--color_bleu2);
+    background: url(../Design/Assets/SVG/Merged\ bar-37.svg) no-repeat;
+    border: 2px solid #1078AD;
+    background-size: cover;
+    border-radius: 10px;
+}
+button:hover {
+    color: white ;
+    background-color: var(--color_bleu2);
+}
+@media screen and (max-width: 1200px){  
+    .image{
+      display: none;
+    }
+ } 
