@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="/css/variables.css" rel="stylesheet" />
-   <style>
+    <style>
+        .style_card {
+            background-color: var(--color_inforation);
 
-            .style_card{
-                background-color:var(--color_inforation);
-              
-            }
-             p{
-                 font-size: 17px;
-                 font-weight: 500;
-                 line-height: 30px;
-                 text-align: justify;
-                 text-align-last:center ;
-             }
-             h5{
-                 font-family: var(--font-family);
-                color: var(--color_bleu2);
-                font-size: 22px;
-                font-weight: 900;
-                margin-bottom: 30px;
-                text-align: center;
+        }
 
-             }
-             .button{
-                color: var(--color_bleu2); 
-                border: 2px solid var(--color_bleu2) ; 
-                width: 200px; 
-                background-color: var(--color_bgButton);
-                font-weight: 700;
+        p {
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 30px;
+            text-align: justify;
+            text-align-last: center;
+        }
 
-             }
-             .title{
-                font-family: var(--font-family);
-                color:#a94442;
-                font-size: 45px;
-                font-weight: 900;
-                margin-bottom: 30px;
-                text-align: center;
-                text-align: center;
-             }
+        h5 {
+            font-family: var(--font-family);
+            color: var(--color_bleu2);
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
 
-  </style>
+        }
+
+        .button {
+            color: var(--color_bleu2);
+            border: 2px solid var(--color_bleu2);
+            width: 200px;
+            background-color: var(--color_bgButton);
+            font-weight: 700;
+
+        }
+
+        .title {
+            font-family: var(--font-family);
+            color: #a94442;
+            font-size: 45px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
+            text-align: center;
+        }
+    </style>
     <title>Result</title>
 </head>
+
 <body>
-       <section class="d-flex justify-content-center align-items-center w-100 p-5  " >
-        <div class="card   px-5 py-5  mb-1 border-1 style_card " > 
-            <h5  >  Résultats </h5>
+    <section class="d-flex justify-content-center align-items-center w-100 p-5  ">
+        <div class="card   px-5 py-5  mb-1 border-1 style_card ">
+            <h5> Résultats </h5>
             <p class="title">Appelez le 141</p>
-          <hr> 
-                  <p>Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre
-                       température deux fois par jour. Rappel des mesures d’hygiène.</p>
+            <hr>
+            <p>Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre
+                température deux fois par jour. Rappel des mesures d’hygiène.</p>
 
-          </div>
-                     
-          </div>
-        
-       </section>
-       <div class=" text-center ">
-        <button type="button" class=" btn btn-lg  button m-2 " >Recommencer le test</button>
+        </div>
 
-       </div>
+        </div>
+
+    </section>
+    <div class=" text-center ">
+        <button onclick="window.location.href='./information.html'" type="button"
+            class=" btn btn-lg  button m-2 ">Recommencer le test</button>
+
+    </div>
 
 </body>
+
 </html>
