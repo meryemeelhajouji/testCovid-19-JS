@@ -96,56 +96,57 @@ let form = document.querySelector(".form")
 let progress = document.querySelector("#progress")
 let mesChoix = document.querySelector("#mesChoix")
 let i = 0, responseContent ="", allResponse = [];
-sui()
+for(let k = 0; k<= 23; k++){
+    allResponse[k] = "";
+}
+submit(i)
 form.addEventListener('submit', e => {
     e.preventDefault();
-    sui();
+    // console.log("name", allResponse);
+    i++;
+    let index = i;
+    submit(index);
 })
 precedent.addEventListener('click', e => {
-    prece();
+    i -= 1;
+    let index = i;
+    submit(index);
 })
-function sui(){
+function submit(index){
+    if(index != 0)
+        allResponse[index] = form.reponse.value;
+    score.textContent = index+1;
+    console.log("index", index);
     responseContent = "";
-    if(i >= 1){
-        allResponse[i-1] = form.reponse.value;
-        console.log("name", allResponse);
-    }
-    if(i >= 22){
+    if(index >= 22){
         window.location.href= "./result.html";
     }
-    score.textContent = i+1;
-    question.textContent = questions[i].question;
-    if(questions[i].type === 'multichoix'){
+    if(questions[index].type === 'multichoix'){
         let j = 0;
-        questions[i].choix.forEach(e => {
+        questions[index].choix.forEach(e => {
             responseContent += `<div class="input${j}">
-                                <label for="input${j}" class="choix d-block form-label">${e}</label>
-                                <input id="input${j}" class="form-check-input" type="radio" name="reponse" value="${e}" required>
-                              </div>
-                            `;
+            <label for="input${j}" class="choix d-block form-label">${e}</label>
+            <input id="input${j}" class="form-check-input" type="radio" name="reponse" value="${e}" required>
+            </div>
+            `;
             j++;
         });
-    }else if(questions[i].type === 'text'){
+    }else if(questions[index].type === 'text'){
         responseContent = `<div class="input-group mb-3">
-                                <input type="number" class="form-control" placeholder="${questions[i].min}-${questions[i].max}"
-                                    aria-label="Recipient's username" name="reponse" aria-describedby="basic-addon2">
-                                <span class="input-group-text" id="basic-addon2">${questions[i].unite}</span>
-                            </div>
-                        `;
+        <input type="number" class="form-control" placeholder="${questions[index].min}-${questions[index].max}"
+        aria-label="Recipient's username" name="reponse" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">${questions[index].unite}</span>
+        </div>
+        `;
     }else{
         responseContent = `<div class="input-group mb-3">
-                                <input type="number" class="form-control" placeholder=""
-                                    aria-label="Recipient's username" name="reponse" aria-describedby="basic-addon2">
-                                <span class="input-group-text" id="basic-addon2">Text</span>
-                            </div>
-                        `;
+        <input type="number" class="form-control" placeholder=""
+        aria-label="Recipient's username" name="reponse" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">Text</span>
+        </div>
+        `;
     }
+    question.textContent = questions[index].question;
     mesChoix.innerHTML = responseContent;
-    progress.style.width = `${(i + 1) * 4.50}%`;
-    i++;
-}
-function prece(){
-    if(i == 1) return;
-    i -= 2;
-    sui();
+    progress.style.width = `${(i + 1) * 4.17}%`;
 }
