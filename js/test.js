@@ -41,7 +41,7 @@ let questions = [
         type: "libre"
     },
     {
-        question: "Quel est votre âge ?", type: "text", min: 15, max: 110, unite: "ans"
+        question: "Quel est votre âge ?", type: "text", min: 5, max: 120, unite: "ans"
     },
     {
         question: "Quel est votre poids ?", type: "text", min: 20, max: 220, unite: "kg"
@@ -89,7 +89,7 @@ let questions = [
         choix: ["oui","non","ne sait pas"]
     }
 ]
-let i = 0
+let i = 22
 let form = document.querySelector("form")
 let score = document.querySelector("#score")
 let question = document.querySelector("#question")
@@ -97,10 +97,14 @@ let formulaire = document.querySelector("#formulaire")
 let precedent = document.querySelector("#precedent")
 let main = document.querySelector("main")
 let bar = document.querySelector(".progress-bar")
+let allResult = []
+for(let k = 0; k < 24; k++){
+    allResult[k] = '';
+}
 let affichage = () => {
+    console.log(allResult)
     score.textContent = i+1
-    let calcul = 4.17 * (i+1)
-    bar.style.width = `${calcul}%`
+    bar.style.width = `${4.17 * (i+1)}%`
     if(i == 0)
         precedent.style.display = "none"
     else
@@ -133,22 +137,73 @@ form.addEventListener("submit",(e) => {
     e.preventDefault()
     if(questions[i].type == "text"){
         if((form.reponse.value >= questions[i].min) && (form.reponse.value <= questions[i].max)){
-            console.log(form.reponse.value)
+            allResult[i] = form.reponse.value;
         }
         else{
             alert("Valeur non valide")
             return
         }
     }else{
-        console.log(form.reponse.value)
+        allResult[i] = form.reponse.value;
     }
     i++
     if(i == 24){
-        main.innerHTML = "le resultat"
+        main.innerHTML = `
+                        <div class="board-stepper fw-bold text-center d-flex justify-content-around align-items-center">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                                <ellipse id="Ellipse_270" data-name="Ellipse 270" cx="5.5" cy="5" rx="5.5" ry="5" fill="#1078ad" />
+                            </svg>
+                            <div class="information">Informations</div>
+                        </div>
+                        <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                            <ellipse id="Ellipse_270" data-name="Ellipse 270" cx="5.5" cy="5" rx="5.5" ry="5" fill="#1078ad" />
+                        </svg>
+                            <div class="information">Questionnaire</div>
+                        </div>
+                        <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+                            <circle id="Ellipse_271" data-name="Ellipse 271" cx="19.5" cy="19.5" r="19.5" fill="#88b7d3" />
+                            <circle id="Ellipse_275" data-name="Ellipse 275" cx="5" cy="5" r="5" transform="translate(15 14)"
+                            fill="#f4cf1b" />
+                        </svg>
+                            <div class="information">Résultats</div>
+                        </div>
+                        </div>
+                        <section class="text-center d-flex justify-content-center align-items-center w-100 p-5  ">
+                        <div class="card   px-5 py-5  mb-1 border-1 style_card ">
+                        <h5> Résultats </h5>
+                        <p class="title">Appelez le 141</p>
+                        <hr>
+                        <p>Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre
+                            température deux fois par jour. Rappel des mesures d’hygiène.</p>
+
+                        </div>
+
+                        </div>
+
+                        </section>
+                        <div class=" text-center">
+                        <button onclick="window.location.href='information.html'" type="button" class=" btn btn-lg  button m-2 ">Recommencer le test</button>
+                        </div>
+                        `;
     }else
         affichage()
 })
 precedent.addEventListener("click", () => {
     i--
-    affichage()
+    affich  ()
 })
+
+messageAffiche = [
+    ` nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. `,
+    `téléconsultation ou médecin généraliste ou visite à domicile  préciser “appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.” 
+   `,
+    `appel 141 `,
+    ` téléconsultation ou médecin généraliste ou visite à domicile  `,
+    `Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute`,
+    `Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil. 
+   `,
+    ` Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. `,
+  ];
