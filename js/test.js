@@ -86,6 +86,29 @@ let questions = [
         choix: ["oui","non","Ne sait pas"], complexe: false
     }
 ]
-let i = 1
-let score = document.querySelector("#score")
-let question = document.querySelector("#question")
+
+let i = 0
+let score = document.querySelector("#score");
+let question = document.querySelector("#question");
+let suive = document.querySelector("#suive");
+let pre = document.querySelector("#pre");
+let form =document.querySelector("form")
+score.textContent = i;
+question.textContent = questions[i].question
+
+form.addEventListener("submit" , (e) =>{
+    e.preventDefault()
+    score.textContent = ++i
+    question.textContent = questions[i].question
+
+})
+
+pre.addEventListener("click" , () =>{
+
+    score.textContent = --i
+    question.textContent = questions[i].question
+
+
+})
+
+
