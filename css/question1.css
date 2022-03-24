@@ -1,64 +1,104 @@
 @import url("variables.css");
-body{
-    font-family: var(--font-family);
+body {
+  font-family: var(--font-family);
 }
-form{
-    width: 80%;
-    height: 400px;
-    padding: 50px;
-    margin: auto;
-    border: 1px solid rgb(191, 191, 191);
-    display: flex;
-    color: var(--color_g);
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+form {
+  width: 80%;
+  height: auto;
+  padding: 50px;
+  margin: auto;
+  border: 1px solid rgb(191, 191, 191);
+  display: flex;
+  color: var(--color_g);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-.titre{
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
+.titre {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }
-.flex{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    text-align: center;
+.flex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  text-align: center;
 }
-.center{
-    justify-content: center;
+.center {
+  justify-content: center;
 }
-.betwen{
-    justify-content: space-between;
+.betwen {
+  justify-content: space-between;
 }
-.center div{
-    padding: 10px;
+.center div {
+  padding: 10px;
 }
-button{
-    width: 120px;
-    font-family: var(--font-family);
-    font-size: large;
-    background-color: #D0E5F0;
-    color: var(--color_bleu2);
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid var(--color_bleu2);
+button {
+  width: 120px;
+  font-family: var(--font-family);
+  font-size: large;
+  background-color: #d0e5f0;
+  color: var(--color_bleu2);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--color_bleu2);
 }
-button:hover{
-    background-color: var(--color_bleu2);
-    cursor: pointer;
-    color: white;
+button:hover {
+  background-color: var(--color_bleu2);
+  cursor: pointer;
+  color: white;
 }
-.choix{
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid var(--color_bleu2);
-    color: var(--color_bleu2);
+.choix {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--color_bleu2);
+  color: var(--color_bleu2);
 }
-.choisi{
-    color: yellow;
-    background-color: var(--color_bleu2);
+.choisi {
+  color: yellow;
+  background-color: var(--color_bleu2);
 }
-label{
-    display: block;
+label {
+  display: block;
+}
+
+/* resul */
+.style_card {
+  background-color: var(--color_inforation);
+}
+
+#p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: justify;
+  text-align-last: center;
+}
+
+#h5 {
+  font-family: var(--font-family);
+  color: var(--color_bleu2);
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.button {
+  color: var(--color_bleu2);
+  border: 2px solid var(--color_bleu2);
+  width: 200px;
+  background-color: var(--color_bgButton);
+  font-weight: 700;
+}
+
+.title {
+  font-family: var(--font-family);
+  color: #a94442;
+  font-size: 45px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-align: center;
+  text-align: center;
 }
