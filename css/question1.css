@@ -2,9 +2,9 @@
 body{
     font-family: var(--font-family);
 }
-form{
+.form{
     width: 80%;
-    height: 400px;
+    height: auto;
     padding: 50px;
     margin: auto;
     border: 1px solid rgb(191, 191, 191);
