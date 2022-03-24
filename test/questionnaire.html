@@ -70,35 +70,21 @@
     </div>
     
     <div class="w-75 my-3 m-auto">
-        <div class="fw-bold"><span id="score"></span>/22</div>
+        <div class="fw-bold"><span id="score">1</span>/24</div>
         <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" style="width: 5.54%" aria-valuenow="50"
+            <div id="ligne" class="progress-bar bg-info" role="progressbar" style="width: 5.54%" aria-valuenow="50"
             aria-valuemin="0" aria-valuemax="100">
         </div>
     </div>
 </div>
-<form>
-    <div id="question" class="titre"></div>
-    <div class="flex center">
-        <div>
-            <div class="choix">réponse 1</div>
-            <input class="form-check-input" type="radio" name="reponse" value="false" required>
-        </div>
-        <div>
-            <div class="choix choisi">réponse 1</div>
-            <input class="form-check-input" type="radio" name="reponse" value="true" required>
-        </div>
-        <div class="input-group mb-3">
-            <input type="number" class="form-control" placeholder="Recipient's username"
-            aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2">@example.com</span>
-        </div>
-    </div>
+<div id="form">
+    <div id="question" class="titre">Pensez-vous avoir eu de la fièvre ces derniers jours (frissons, sueurs) ?</div>
+    <div id="formulaire" class="flex center"></div>
     <div class="flex betwen">
-        <button>Précedent</button>
-        <button type="submit">Suivant</button>
+        <button id="precedent">Précedent</button>
+        <button id="suivent">Suivant</button>
     </div>
-</form>
+</div>
 </main>
 <footer class="text-center text-lg-start mt-5">
     <hr class="mb-4 mt-0 d-inline-block mx-auto w-100" style="background-color: #000; height: 1px" />
