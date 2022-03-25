@@ -89,7 +89,7 @@ let questions = [
         choix: ["oui","non","ne sait pas"]
     }
 ]
-let i = 22
+let i = 0
 let form = document.querySelector("form")
 let score = document.querySelector("#score")
 let question = document.querySelector("#question")
@@ -97,12 +97,11 @@ let formulaire = document.querySelector("#formulaire")
 let precedent = document.querySelector("#precedent")
 let main = document.querySelector("main")
 let bar = document.querySelector(".progress-bar")
-let allResult = []
+let r = []
 for(let k = 0; k < 24; k++){
-    allResult[k] = '';
+    r[k] = '';
 }
 let affichage = () => {
-    console.log(allResult)
     score.textContent = i+1
     bar.style.width = `${4.17 * (i+1)}%`
     if(i == 0)
@@ -137,14 +136,14 @@ form.addEventListener("submit",(e) => {
     e.preventDefault()
     if(questions[i].type == "text"){
         if((form.reponse.value >= questions[i].min) && (form.reponse.value <= questions[i].max)){
-            allResult[i] = form.reponse.value;
+            r[i] = form.reponse.value;
         }
         else{
             alert("Valeur non valide")
             return
         }
     }else{
-        allResult[i] = form.reponse.value;
+        r[i] = form.reponse.value;
     }
     i++
     if(i == 24){
@@ -193,7 +192,7 @@ form.addEventListener("submit",(e) => {
 })
 precedent.addEventListener("click", () => {
     i--
-    affich  ()
+    affichage()
 })
 
 messageAffiche = [
@@ -207,3 +206,32 @@ messageAffiche = [
    `,
     ` Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. `,
   ];
+
+let facteurGravite = () => {
+    let f = 0
+    if(r[0] == "oui" && (r[1] <= 35.4 || r[1] >= 39))
+        f++
+    if(r[6] == "oui" && r[7] == "oui")
+        f++
+    if(r[8] == "oui")
+        f++
+    if(r[9] == "oui")
+        f++
+    if(r[10] == "mal" || r[10] == "très mal")
+        f++
+    if(f > 0){
+        if(r[1] >= 39 && r[6] == "oui" && (r[10] == "mal" || r[10] == "très mal"))
+            return [f, "mineur"]
+        else if(r[9] == "oui" && r[8] == "oui" && r[1] <= 35.4)
+            return [f, "majeur"]
+    }else{
+        return [f, null]
+    }
+}
+
+let facteurPronostic = () => {
+    let p = 0
+    if(r[12] >= 70 || (r[14] == "oui" || r[14] == "ne sait pas") || r[15] == "oui" || r[16] == "oui" || r[17] == "oui" || r[18] == "oui" || r[19] == "oui" || r[20] == "oui" || r[21] == "oui" || r[22] == "oui" )
+        p++
+    return p
+}
