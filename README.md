@@ -1,10 +1,8 @@
 # CovidTest
 
 
-Pour plus de détails veuillez consulter le site de l'application web covid-test
+<h2>Pour plus de détails veuillez consulter le site de l'application web covid-test</h2>
 
-Login: youcode
-Password: youcode22
 
 
 [Link](//meryemeelhajouji.github.io/testCovid-19/)
