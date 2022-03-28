@@ -3,16 +3,10 @@ body {
   font-family: var(--font-family);
 }
 form {
-  width: 80%;
-  height: auto;
-  padding: 50px;
-  margin: auto;
+  width: 85%;
+  padding: 0 0 50px 0;
   border: 1px solid rgb(191, 191, 191);
-  display: flex;
   color: var(--color_g);
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 .titre {
   text-align: center;
@@ -46,7 +40,7 @@ button {
 }
 button:hover {
   background-color: var(--color_bleu2);
-  cursor: pointer;
+  cursor: none;
   color: white;
 }
 .choix {
