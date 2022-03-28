@@ -7,7 +7,7 @@ Login: youcode
 Password: youcode22
 
 
-[Link](//https://meryemeelhajouji.github.io/testCovid-19/)
+[Link](//meryemeelhajouji.github.io/testCovid-19/)
 
 ## Best of luck
 
